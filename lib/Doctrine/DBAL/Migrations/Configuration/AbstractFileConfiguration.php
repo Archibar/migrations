@@ -41,6 +41,7 @@ abstract class AbstractFileConfiguration extends Configuration
         'migrations_directory' => 'loadMigrationsFromDirectory',
         'migrations' => 'loadMigrations',
         'custom_template' => 'setCustomTemplate',
+        'mapping_types' => 'registerTypeMapping',
     ];
 
     protected function setConfiguration(array $config)

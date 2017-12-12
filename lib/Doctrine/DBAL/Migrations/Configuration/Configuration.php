@@ -395,6 +395,17 @@ class Configuration
     }
 
     /**
+     * Register Doctrine type mapping
+     *
+     * @param array $mapping_types mapping types array
+     */
+    public function registerTypeMapping($mapping_types) {
+        foreach($mapping_types as $field => $type) {
+            $this->connection->getDatabasePlatform()->registerDoctrineTypeMapping($field, $type);
+        }
+    }
+
+    /**
      * Register migrations from a given directory. Recursively finds all files
      * with the pattern VersionYYYYMMDDHHMMSS.php as the filename and registers
      * them as migrations.
